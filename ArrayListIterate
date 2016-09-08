@@ -1,0 +1,16 @@
+import java.util.ArrayList;
+import java.util.List;
+
+public class ArrayListIterate {
+  public static void main(String[] args) {
+	List<Integer> listIterate = new ArrayList<Integer>();
+	    listIterate.add(7);
+	    listIterate.add(3);
+	    listIterate.add(4);
+	    listIterate.add(8);
+	    listIterate.add(2);
+	    listIterate.add(1);
+	    
+	    listIterate.forEach(list->System.out.println(list));     //java8 Iteration for ArrayList
+}
+}
