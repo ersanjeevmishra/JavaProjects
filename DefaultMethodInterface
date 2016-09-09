@@ -1,0 +1,33 @@
+interface InterTest{
+	void doThis();
+	default void doThisData(){
+		System.out.println("This is default method in java 8");
+	}
+}
+
+interface InterTest1{
+	default void doThisData(){
+		System.out.println("This is default mthodin java 8 too");
+	}
+}
+class TestInter implements InterTest,InterTest1{
+
+	@Override
+	public void doThis() {
+       System.out.println("This is implemented method in java 8");		
+	}
+	
+	@Override
+	public void doThisData(){
+		InterTest1.super.doThisData();
+		InterTest.super.doThisData();
+	}
+	
+}
+public class TestMain {
+public static void main(String[] args) {
+	InterTest it = new TestInter();
+	    it.doThis();
+	    it.doThisData();
+}
+}
